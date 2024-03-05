@@ -129,9 +129,6 @@ class SigmoidLayer(Layer):
         computes gradients of loss with respect to parameters of layer and
         inputs of layer).
 
-        Arguments:
-            grad_z {np.ndarray} -- Gradient array of shape (batch_size, n_out).
-
         Returns:
             {np.ndarray} -- Array containing gradient with respect to layer
                 input, of shape (batch_size, n_in).
@@ -296,9 +293,6 @@ class IdentityLayer(Layer):
         the output of this layer, performs back pass through the layer (i.e.
         computes gradients of loss with respect to parameters of layer and
         inputs of the layer).
-
-        Arguments:
-            grad_z {np.ndarray} -- Gradient array of shape (batch_size, n_out).
 
         Returns:
             {np.ndarray} -- Array containing gradient with respect to layer
