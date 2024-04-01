@@ -12,8 +12,6 @@ from sklearn.preprocessing import LabelBinarizer, MinMaxScaler
 class Regressor(BaseEstimator):
 
     def __init__(self, nb_epoch=1000, minibatch_size=10, learning_rate=0.01):
-        # You can add any input parameters you need
-        # Remember to set them with a default value for LabTS tests
         """
         Initialise the model.
 
@@ -53,7 +51,6 @@ class Regressor(BaseEstimator):
 
         """
 
-        # Fill missing values in the DataFrame with 0
         x = x.fillna(0)
 
         # Saves binarizer and scaler instances
@@ -182,7 +179,6 @@ def load_regressor():
     Utility function to load the trained regressor model in part2_model.pickle.
     """
 
-    # If you alter this, make sure it works in tandem with save_regressor
     with open('part2_model.pickle', 'rb') as target:
         trained_model = pickle.load(target)
     print("\nLoaded model in part2_model.pickle\n")
@@ -190,13 +186,9 @@ def load_regressor():
 
 
 def regressor_hyper_parameter_search(x_train, y_train):
-    # Ensure to add whatever inputs you deem necessary to this function
     """
     Performs a hyperparameter for fine-tuning the regressor implemented
     in the Regressor class.
-
-    Arguments:
-        Add whatever inputs you need.
         
     Returns:
         The function should return your optimised hyperparameters.
@@ -229,9 +221,6 @@ def example_main():
     y_train = data.loc[:, [output_label]]
 
     # Training
-    # This example trains on the whole available dataset. 
-    # You probably want to separate some held-out data 
-    # to make sure the model isn't overfitting
     regressor = Regressor(nb_epoch=10)
     regressor.fit(x_train, y_train)
     save_regressor(regressor)
